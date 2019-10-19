@@ -1,2 +1,0 @@
-# snthrgy
-Created with CodeSandbox
