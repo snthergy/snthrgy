@@ -12,26 +12,25 @@ interface NavMenuProps {
 const NavMenu = ({
   authenticated,
   client,
-  authId,
-  isLoggedIn
+  authId
 }: NavMenuProps): JSX.Element => {
   const [userName, setUsername] = React.useState("");
 
-  const tester = () => {
+  React.useEffect(() => {
     client
       .query({
         query: QUERY_USERNAME,
-        variables: { authId: authId }
+        // eslint-disable-next-line @typescript-eslint/camelcase
+        variables: { auth0_id: authId }
       })
-      .then((data: any) => console.log("DATA: ", data))
+      .then((data: any) => setUsername(data.data.users[0].name))
       .catch((err: any) => console.log("ERROR: ", err));
-  };
+  }, [authenticated, client, authId]);
 
   return (
     <>
       <Typography>Menu</Typography>
       <Typography>{authenticated && userName}</Typography>
-      <button onClick={tester}>CLICK</button>
     </>
   );
 };
