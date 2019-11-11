@@ -1,11 +1,5 @@
 import * as React from "react";
-import {
-  Toolbar,
-  AppBar,
-  Button,
-  makeStyles,
-  createStyles
-} from "@material-ui/core";
+import { Toolbar, AppBar, makeStyles, createStyles } from "@material-ui/core";
 import auth0 from "auth0-js";
 import { AUTH_CONFIG } from "../client/auth0-variables";
 import NavMenu from "./NavMenu";
@@ -20,7 +14,8 @@ const useStyles = makeStyles(() =>
   createStyles({
     toolbar: {
       display: "flex",
-      justifyContent: "space-between"
+      justifyContent: "space-between",
+      backgroundColor: "#3a2091"
     },
     button: {
       color: "white",

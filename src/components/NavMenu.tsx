@@ -30,7 +30,7 @@ const NavMenu = ({
 
   return (
     <div>
-      <Typography>Menu</Typography>
+      <Typography>s_nthrgy</Typography>
       <Typography>{authenticated && userName}</Typography>
     </div>
   );
