@@ -9,6 +9,7 @@ import {
 import auth0 from "auth0-js";
 import { AUTH_CONFIG } from "../client/auth0-variables";
 import NavMenu from "./NavMenu";
+import Login from "./login";
 
 export interface NavBarProps {
   auth?: any;
@@ -20,6 +21,10 @@ const useStyles = makeStyles(() =>
     toolbar: {
       display: "flex",
       justifyContent: "space-between"
+    },
+    button: {
+      color: "white",
+      borderColor: "white"
     }
   })
 );
@@ -35,14 +40,6 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
     scope: "openid profile"
   });
 
-  const login = (): void => {
-    auth.authorize();
-  };
-
-  const logout = (): void => {
-    authProp.logout();
-  };
-
   const authenticated = authProp.isAuthenticated();
   const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
@@ -55,9 +52,7 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
           authId={authProp.getSub()}
           isLoggedIn={isLoggedIn}
         />
-        <Button variant="outlined" onClick={authenticated ? logout : login}>
-          {authenticated ? "Logout" : "Login"}
-        </Button>
+        <Login auth={auth} authProp={authProp} />
       </Toolbar>
     </AppBar>
   );

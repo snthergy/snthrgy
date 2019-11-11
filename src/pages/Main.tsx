@@ -1,14 +1,17 @@
 import * as React from "react";
-import Sound from "../components/Sound";
-import Navbar from "../components/Navbar";
+import styled from "@emotion/styled";
+import Dashboard from "./dashboard";
 
 const Main = (props?: any): JSX.Element => {
   return (
-    <div className="App">
-      <Navbar {...props} />
-      <Sound />
-    </div>
+    <AppContainer>
+      <Dashboard {...props} />
+    </AppContainer>
   );
 };
 
 export default Main;
+
+const AppContainer = styled.div`
+  margin-top: 64px;
+`;
