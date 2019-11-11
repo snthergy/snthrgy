@@ -1,18 +1,5 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
-import Sound from "./components/sound";
-import Navbar from "./components/navbar";
+import ReactDOM from "react-dom";
+import { makeMainRoutes } from "./routes";
 
-import "./styles.css";
-
-function App(): JSX.Element {
-  return (
-    <div className="App">
-      <Navbar />
-      <Sound />
-    </div>
-  );
-}
-
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+const routes = makeMainRoutes();
+ReactDOM.render(routes, document.getElementById("root"));
