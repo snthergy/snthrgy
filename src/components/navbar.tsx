@@ -24,30 +24,22 @@ const useStyles = makeStyles(() =>
   })
 );
 
-const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
-  const authProp = props.auth;
+const NavBar: React.FC<NavBarProps> = ({ client, auth }: NavBarProps) => {
   const classes = useStyles();
-  const auth = new auth0.WebAuth({
-    domain: AUTH_CONFIG.domain,
-    clientID: AUTH_CONFIG.clientId,
-    redirectUri: AUTH_CONFIG.callbackUrl,
-    responseType: "token id_token",
-    scope: "openid profile"
-  });
 
-  const authenticated = authProp.isAuthenticated();
+  const authenticated = auth.isAuthenticated();
   const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
   return (
     <AppBar position="fixed">
       <Toolbar className={classes.toolbar}>
         <NavMenu
-          client={props.client}
+          client={client}
           authenticated={authenticated}
-          authId={authProp.getSub()}
+          authId={auth.getSub()}
           isLoggedIn={isLoggedIn}
         />
-        <Login auth={auth} authProp={authProp} />
+        <Login auth={auth} />
       </Toolbar>
     </AppBar>
   );

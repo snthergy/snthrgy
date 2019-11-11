@@ -12,26 +12,18 @@ const useStyles = makeStyles(() =>
 
 interface LoginProps {
   auth: any;
-  authProp: any;
 }
 
-const Login = ({ auth, authProp }: LoginProps): JSX.Element => {
-  const authenticated = authProp.isAuthenticated();
+const Login = ({ auth }: LoginProps): JSX.Element => {
+  const authenticated = auth.isAuthenticated();
   const classes = useStyles({});
-  const login = (): void => {
-    auth.authorize();
-  };
-
-  const logout = (): void => {
-    authProp.logout();
-  };
 
   return (
     <div>
       <Button
         className={classes.button}
         variant="outlined"
-        onClick={authenticated ? logout : login}
+        onClick={authenticated ? auth.logout : auth.login}
       >
         {authenticated ? "Logout" : "Login"}
       </Button>
