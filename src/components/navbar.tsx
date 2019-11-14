@@ -1,13 +1,12 @@
 import * as React from "react";
 import { Toolbar, AppBar, makeStyles, createStyles } from "@material-ui/core";
-import auth0 from "auth0-js";
-import { AUTH_CONFIG } from "../client/auth0-variables";
 import NavMenu from "./NavMenu";
 import Login from "./login";
 
 export interface NavBarProps {
   auth?: any;
   client: any;
+  authenticated: boolean;
 }
 
 const useStyles = makeStyles(() =>
@@ -24,10 +23,13 @@ const useStyles = makeStyles(() =>
   })
 );
 
-const NavBar: React.FC<NavBarProps> = ({ client, auth }: NavBarProps) => {
+const NavBar: React.FC<NavBarProps> = ({
+  client,
+  auth,
+  authenticated
+}: NavBarProps) => {
   const classes = useStyles();
 
-  const authenticated = auth.isAuthenticated();
   const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
   return (
