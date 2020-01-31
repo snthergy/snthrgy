@@ -3,7 +3,7 @@ import { Route, Router } from "react-router-dom";
 
 import Main from "./pages/Main";
 import history from "./utils/history";
-import { useAuth0 } from "./client/spaAuth";
+import { useAuth0, Auth0Provider } from "./client/spaAuth";
 
 import { ApolloProvider } from "react-apollo";
 import makeApolloClient from "./apollo";
@@ -20,22 +20,21 @@ const AuthProvider = (props: any): JSX.Element => {
     }
     return (
       <ApolloProvider client={client}>
-        <Main {...props} client={client} auth={auth} />
+        <Auth0Provider>
+          <Main {...props} client={client} auth={auth} />
+        </Auth0Provider>
       </ApolloProvider>
     );
   }
 
   return <Main {...props} />;
-}
+};
 
 export const makeMainRoutes = (): JSX.Element => {
   return (
     <Router history={history}>
       <div>
-        <Route
-          exact
-          path="/"
-        >
+        <Route exact path="/">
           <AuthProvider />
         </Route>
       </div>

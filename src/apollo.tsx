@@ -7,7 +7,6 @@ import { InMemoryCache, NormalizedCacheObject } from "apollo-cache-inmemory";
 // import { SubscriptionClient } from "subscriptions-transport-ws";
 
 import { GRAPHQL_URL } from "./utils/constants";
-import auth from "./client/Auth";
 // import { OperationTypeNode } from "graphql";
 
 interface Headers {
@@ -16,7 +15,7 @@ interface Headers {
 
 const getHeaders = (): Headers => {
   const headers: Headers = {};
-  const token = auth.getIdToken();
+  const token = getTokenSilently();
   if (token) {
     headers.authorization = `Bearer ${token}`;
   }
