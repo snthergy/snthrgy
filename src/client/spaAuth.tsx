@@ -1,44 +1,20 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, {useState, useEffect, useContext} from "react";
 import createAuth0Client from "@auth0/auth0-spa-js";
+import PropTypes from "prop-types";
 
-const DEFAULT_REDIRECT_CALLBACK = (): void =>
+const DEFAULT_REDIRECT_CALLBACK = () =>
   window.history.replaceState({}, document.title, window.location.pathname);
 
-interface Auth0Context {
-  isAuthenticated: boolean;
-  loginWithRedirect: Function;
-  logout: Function;
-  user: {};
-  popupOpen: boolean;
-  loginWithPopup: (params?: {}) => Promise<void>;
-  handleRedirectCallback: Function;
-  getIdTokenClaims: Function;
-  getTokenSilently: Function;
-  getTokenWithPopup: Function;
+export const Auth0Context = React.createContext(null);
+export const useAuth0 = () => useContext(Auth0Context);
+interface Auth0ProviderProps {
+  onRedirectCallback: Function;
 }
-
-const DefaultAuth0Context = {
-  isAuthenticated: false,
-  loginWithRedirect: (): any => null,
-  logout: (): any => null,
-  user: {},
-  loading: false,
-  popupOpen: false,
-  loginWithPopup: (): any => null,
-  handleRedirectCallback: (): any => null,
-  getTokenSilently: (): any => null,
-  getIdTokenClaims: (): any => null,
-  getTokenWithPopup: (): any => null
-}
-
-export const Auth0Context = React.createContext(DefaultAuth0Context);
-export const useAuth0 = (): Auth0Context => useContext(Auth0Context);
-
-export const Auth0Provider = ({
+export const Auth0Provider: React.SFC<Auth0ProviderProps> = ({
   children,
   onRedirectCallback = DEFAULT_REDIRECT_CALLBACK,
   ...initOptions
-}: { children: React.ReactChildren; onRedirectCallback: Function; initOptions?: any }): React.ReactNode => {
+}) => {
   const [isAuthenticated, setIsAuthenticated] = useState();
   const [user, setUser] = useState();
   const [auth0Client, setAuth0] = useState();
@@ -46,14 +22,19 @@ export const Auth0Provider = ({
   const [popupOpen, setPopupOpen] = useState(false);
 
   useEffect(() => {
-    const initAuth0 = async (): Promise<void> => {
-      const auth0FromHook = await createAuth0Client(initOptions as Auth0ClientOptions);
+    const initAuth0 = async () => {
+      const auth0FromHook = await createAuth0Client(
+        initOptions as Auth0ClientOptions
+      );
       setAuth0(auth0FromHook);
 
-      // if (window.location.search.includes("code=")) {
-      //   const { appState } = await auth0FromHook.handleRedirectCallback();
-      //   onRedirectCallback(appState);
-      // }
+      if (
+        window.location.search.includes("code=") &&
+        window.location.search.includes("state=")
+      ) {
+        const {appState} = await auth0FromHook.handleRedirectCallback();
+        onRedirectCallback(appState);
+      }
 
       const isAuthenticated = await auth0FromHook.isAuthenticated();
 
@@ -67,6 +48,7 @@ export const Auth0Provider = ({
       setLoading(false);
     };
     initAuth0();
+    // eslint-disable-next-line
   }, []);
 
   const loginWithPopup = async (params = {}) => {
@@ -83,7 +65,7 @@ export const Auth0Provider = ({
     setIsAuthenticated(true);
   };
 
-  const handleRedirectCallback = async (): Promise<void> => {
+  const handleRedirectCallback = async () => {
     setLoading(true);
     await auth0Client.handleRedirectCallback();
     const user = await auth0Client.getUser();
@@ -100,11 +82,11 @@ export const Auth0Provider = ({
         popupOpen,
         loginWithPopup,
         handleRedirectCallback,
-        getIdTokenClaims: (...p: any): Function => auth0Client.getIdTokenClaims(...p),
-        loginWithRedirect: (...p: any) => auth0Client.loginWithRedirect(...p),
-        getTokenSilently: (...p: any) => auth0Client.getTokenSilently(...p),
-        getTokenWithPopup: (...p: any) => auth0Client.getTokenWithPopup(...p),
-        logout: (...p: any) => auth0Client.logout(...p)
+        getIdTokenClaims: (...p: any[]) => auth0Client.getIdTokenClaims(...p),
+        loginWithRedirect: (...p: any[]) => auth0Client.loginWithRedirect(...p),
+        getTokenSilently: (...p: any[]) => auth0Client.getTokenSilently(...p),
+        getTokenWithPopup: (...p: any[]) => auth0Client.getTokenWithPopup(...p),
+        logout: (...p: any[]) => auth0Client.logout(...p)
       }}
     >
       {children}

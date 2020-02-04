@@ -1,15 +1,8 @@
 import * as React from "react";
 import styled from "@emotion/styled";
 import Dashboard from "./dashboard";
-import moment from "moment";
-import { USER_UPDATE_LASTSEEN } from "../client/queries/user_queries";
 
-interface MainProps {
-  auth: any;
-  client: any;
-}
-
-const Main = (props: MainProps): JSX.Element => {
+const Main = (props: {}): JSX.Element => {
   // const [session, setSession] = React.useState(false);
 
   // componentDidMount(): void {

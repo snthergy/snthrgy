@@ -15,7 +15,10 @@ module.exports = {
     "@typescript-eslint/prefer-interface": "off",
     "@typescript-eslint/prefer-namespace-keyword": "off",
     indent: "off",
-    "@typescript-eslint/indent": ["error", 2]
+    "@typescript-eslint/indent": ["error", 2],
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "react/prop-types": 0
     // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
     // e.g. "@typescript-eslint/explicit-function-return-type": "off",
   },
