@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Button, makeStyles, createStyles } from "@material-ui/core";
+import {Button, makeStyles, createStyles} from "@material-ui/core";
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -10,22 +10,13 @@ const useStyles = makeStyles(() =>
   })
 );
 
-interface LoginProps {
-  auth: any;
-}
-
-const Login = ({ auth }: LoginProps): JSX.Element => {
-  const authenticated = auth.isAuthenticated();
+const Login = (): JSX.Element => {
   const classes = useStyles({});
 
   return (
     <div>
-      <Button
-        className={classes.button}
-        variant="outlined"
-        onClick={authenticated ? auth.logout : auth.login}
-      >
-        {authenticated ? "Logout" : "Login"}
+      <Button className={classes.button} variant="outlined">
+        Login
       </Button>
     </div>
   );
