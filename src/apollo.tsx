@@ -1,13 +1,12 @@
 import ApolloClient from "apollo-client";
-import { HttpLink } from "apollo-link-http";
-import { InMemoryCache, NormalizedCacheObject } from "apollo-cache-inmemory";
+import {HttpLink} from "apollo-link-http";
+import {InMemoryCache, NormalizedCacheObject} from "apollo-cache-inmemory";
 // import { WebSocketLink } from "apollo-link-ws";
 // import { split } from "apollo-link";
 // import { getMainDefinition } from "apollo-utilities";
 // import { SubscriptionClient } from "subscriptions-transport-ws";
 
-import { GRAPHQL_URL } from "./utils/constants";
-import auth from "./client/Auth";
+import {GRAPHQL_URL} from "./utils/constants";
 // import { OperationTypeNode } from "graphql";
 
 interface Headers {
@@ -16,10 +15,10 @@ interface Headers {
 
 const getHeaders = (): Headers => {
   const headers: Headers = {};
-  const token = auth.getIdToken();
-  if (token) {
-    headers.authorization = `Bearer ${token}`;
-  }
+  // const token = getTokenSilently();
+  // if (token) {
+  //   headers.authorization = `Bearer ${token}`;
+  // }
   return headers;
 };
 

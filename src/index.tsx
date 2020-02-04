@@ -1,5 +1,5 @@
+import * as React from 'react';
 import ReactDOM from "react-dom";
-import { makeMainRoutes } from "./routes";
+import Main from "./pages/Main";
 
-const routes = makeMainRoutes();
-ReactDOM.render(routes, document.getElementById("root"));
+ReactDOM.render(<Main />, document.getElementById("root"));

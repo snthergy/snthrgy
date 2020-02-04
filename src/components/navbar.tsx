@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Toolbar, AppBar, makeStyles, createStyles } from "@material-ui/core";
+import {Toolbar, AppBar, makeStyles, createStyles} from "@material-ui/core";
 import NavMenu from "./NavMenu";
 import Login from "./login";
 
@@ -23,25 +23,14 @@ const useStyles = makeStyles(() =>
   })
 );
 
-const NavBar: React.FC<NavBarProps> = ({
-  client,
-  auth,
-  authenticated
-}: NavBarProps) => {
-  const classes = useStyles();
-
-  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+const NavBar: React.FC<NavBarProps> = () => {
+  const classes = useStyles({});
 
   return (
     <AppBar position="fixed">
       <Toolbar className={classes.toolbar}>
-        <NavMenu
-          client={client}
-          authenticated={authenticated}
-          authId={auth.getSub()}
-          isLoggedIn={isLoggedIn}
-        />
-        <Login auth={auth} />
+        <NavMenu />
+        <Login />
       </Toolbar>
     </AppBar>
   );
