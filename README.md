@@ -10,7 +10,7 @@ To install dependencies, you first need to run:
 yarn
 ```
 
-To start the developmentt server, run:
+To start the development server, run:
 
 ```
 yarn start
