@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "@emotion/styled";
-import Sound from "../components/Sound";
+import Sound from "../components/sound";
 import { Box } from "@material-ui/core";
 
 const Lanes = (): JSX.Element => {

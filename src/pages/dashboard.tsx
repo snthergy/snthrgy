@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "@emotion/styled";
-import Navbar from "../components/NavBar";
+import Navbar from "../components/navbar";
 import PlayField from "../components/PlayField";
 
 const Dashboard = (props: any): JSX.Element => {
