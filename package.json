@@ -32,7 +32,7 @@
     "react-dom": "16.8.6",
     "react-rotary-knob": "^1.1.7",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.1.2",
+    "react-scripts": "^3.3.1",
     "subscriptions-transport-ws": "^0.9.16",
     "tone": "13.8.25"
   },
