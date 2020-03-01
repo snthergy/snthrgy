@@ -18,4 +18,6 @@ yarn start
 
 ---
 
-I need to install storybook and get some user stories together
+### To run storybook
+
+`yarn storybook`
