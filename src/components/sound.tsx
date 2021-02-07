@@ -1,8 +1,8 @@
 import * as React from "react";
-import { FatOscillator } from "tone";
-import { Box, CardHeader, Button, CardContent } from "@material-ui/core";
+import {FatOscillator} from "tone";
+import {Box, CardHeader, Button, CardContent} from "@material-ui/core";
 import Slider from "@material-ui/core/Slider";
-import styled from "@emotion/styled";
+import styled from "styled-components";
 
 const Sound = (): JSX.Element => {
   const [started, setStarted] = React.useState();
