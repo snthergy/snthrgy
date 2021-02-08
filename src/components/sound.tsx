@@ -5,7 +5,7 @@ import Slider from "@material-ui/core/Slider";
 import styled from "styled-components";
 
 const Sound = (): JSX.Element => {
-  const [started, setStarted] = React.useState();
+  const [started, setStarted] = React.useState(false);
   const [freq, setFreq] = React.useState(400);
 
   const synth: any = React.useRef(
@@ -18,7 +18,7 @@ const Sound = (): JSX.Element => {
 
   console.log("Synth started state: ", synth.current.state);
   const newFreq = (
-    _: React.ChangeEvent<{}>,
+    _: React.ChangeEvent<unknown>,
     value: number | number[]
   ): void => {
     synth.current.frequency.value = value;
@@ -34,7 +34,7 @@ const Sound = (): JSX.Element => {
   };
 
   const newPhase = (
-    _: React.ChangeEvent<{}>,
+    _: React.ChangeEvent<unknown>,
     newSpread: number | number[]
   ): void => {
     synth.current.spread = newSpread;
