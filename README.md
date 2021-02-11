@@ -10,6 +10,7 @@ https://www.figma.com/file/HZUySSPr7Si5KmkHNsKlmb/snthrgy?node-id=17%3A2
 ```
 yarn
 ```
+---
 
 #### To start the development server, run:
 
@@ -21,6 +22,8 @@ yarn start
 
 #### To run storybook
 
-`yarn storybook`
+```
+yarn storybook
+```
 
 ---
