@@ -1,10 +1,9 @@
 ### Synthrgy
 
-So this is the project
+Design iteration 1:
+https://www.figma.com/file/HZUySSPr7Si5KmkHNsKlmb/snthrgy?node-id=17%3A2
 
-The name is kind of stupid right now but we'll get to that later.
-
-To install dependencies, you first need to run:
+To install dependencies:
 
 ```
 yarn
@@ -23,7 +22,3 @@ yarn start
 `yarn storybook`
 
 ---
-
-The designs can be found here:
-
-https://www.figma.com/file/HZUySSPr7Si5KmkHNsKlmb/snthrgy?node-id=0%3A1
