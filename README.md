@@ -1,5 +1,7 @@
 ### Synthrgy
 
+Web synth
+
 Design iteration 1:
 https://www.figma.com/file/HZUySSPr7Si5KmkHNsKlmb/snthrgy?node-id=17%3A2
 
