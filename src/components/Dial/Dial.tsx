@@ -1,23 +1,37 @@
-import React, {useState} from "react";
-import {Basic} from "react-dial-knob";
+import React from "react";
+import Knob, {KnobProps, composeTwo, useAngleUpdater} from "react-dial-knob";
+import {ReactComponent as DialSvg} from "../../assets/dial.svg";
 
-export const MainDial = () => {
-  const [value, setValue] = useState(0);
+export interface DialProps extends KnobProps {
+  style?: React.CSSProperties;
+}
+
+export const Dial = (props: DialProps): JSX.Element => {
+  const [angle, setAngle] = useAngleUpdater(props.value);
+  const angleChangeHandler = composeTwo<number>(setAngle, props.onAngleChange);
+
   return (
-    <Basic
-      diameter={200}
-      min={0}
-      max={4}
-      step={1}
-      value={value}
-      theme={{
-        defaultColor: "#333",
-        activeColor: "#333",
-      }}
-      onValueChange={setValue}
-      ariaLabelledBy={"my-label"}
-    >
-      <label id={"my-label"}>Some label</label>
-    </Basic>
+    <>
+      <Knob
+        diameter={props.diameter}
+        value={props.value}
+        min={props.min}
+        max={props.max}
+        step={props.step}
+        spaceMaxFromZero={props.spaceMaxFromZero}
+        ariaLabelledBy={props.ariaLabelledBy}
+        ariaValueText={props.ariaValueText}
+        knobStyle={{cursor: "pointer", ...props.knobStyle}}
+        onAngleChange={angleChangeHandler}
+        onInteractionChange={props.onInteractionChange}
+        onValueChange={props.onValueChange}
+      >
+        <DialSvg
+          transform={`rotate(${angle})`}
+          style={{transform: `rotate(${angle}deg)`}}
+        />
+      </Knob>
+      {props.children}
+    </>
   );
 };
