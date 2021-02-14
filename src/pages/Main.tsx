@@ -2,14 +2,16 @@ import * as React from "react";
 import Dashboard from "./dashboard";
 import styled from "styled-components";
 
-// interface MainProps {}
+interface MainProps {}
 
-const Main = (props: any): JSX.Element => {
+const Main = (props: MainProps): JSX.Element => {
   const authenticated = true;
   return (
-    <AppContainer>
-      <Dashboard {...props} authenticated={authenticated} />
-    </AppContainer>
+    <React.Fragment>
+      <AppContainer>
+        <Dashboard {...props} authenticated={authenticated} />
+      </AppContainer>
+    </React.Fragment>
   );
 };
 
