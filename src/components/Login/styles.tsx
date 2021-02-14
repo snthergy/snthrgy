@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import colors from "../../desigin/colors";
+import {Input} from "../Input/index";
 
 export const LoginContainer = styled.div`
   display: flex;
@@ -12,8 +13,11 @@ export const LoginContainer = styled.div`
 `;
 
 export const SignIn = styled.h1`
-  margin-top: 14px;
-  font-size: 18px;
+  margin-top: 48px;
+  margin-bottom: 48px;
+  font-size: 24px;
   font-weight: bold;
   font-family: Open-Sans, Helvetica, Sans-Serif;
 `;
+
+export const StyledInput = styled(Input)``;
