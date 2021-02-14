@@ -5,11 +5,10 @@ import styled from "styled-components";
 interface MainProps {}
 
 const Main = (props: MainProps): JSX.Element => {
-  const authenticated = true;
   return (
     <React.Fragment>
       <AppContainer>
-        <Dashboard {...props} authenticated={authenticated} />
+        <Dashboard {...props} />
       </AppContainer>
     </React.Fragment>
   );

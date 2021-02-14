@@ -2,7 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 import {Login} from "../components/Login/Login";
 
-const Dashboard = (props: any): JSX.Element => {
+const Dashboard = (): JSX.Element => {
   return (
     <DashboardContainer>
       <Login />
