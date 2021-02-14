@@ -1,13 +1,11 @@
 import * as React from "react";
 import styled from "styled-components";
-import Navbar from "../components/navbar";
-import PlayField from "../components/PlayField";
+import {Login} from "../components/Login/Login";
 
 const Dashboard = (props: any): JSX.Element => {
   return (
     <DashboardContainer>
-      <Navbar {...props} />
-      <PlayField />
+      <Login />
     </DashboardContainer>
   );
 };

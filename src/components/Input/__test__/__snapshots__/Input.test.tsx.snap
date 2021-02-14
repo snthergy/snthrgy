@@ -1,40 +1,68 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Dial should match snapshot 1`] = `
+exports[`Input should match snapshot 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <div
-        aria-valuemax="10"
-        aria-valuemin="0"
-        aria-valuenow="5"
-        style="width: 10px; height: 10px; border-radius: 5px; position: relative; outline: none; box-sizing: border-box; overflow: hidden; cursor: pointer;"
-        tabindex="0"
+        class="MuiFormControl-root MuiTextField-root sc-bdfBwQ dYGElg"
       >
-        <svg
-          style="transform: rotate(164deg);"
-          transform="rotate(164)"
+        <div
+          class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
         >
-          dial.svg
-        </svg>
+          <input
+            aria-invalid="false"
+            class="MuiInputBase-input MuiOutlinedInput-input"
+            type="text"
+            value=""
+          />
+          <fieldset
+            aria-hidden="true"
+            class="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
+            style="padding-left: 8px;"
+          >
+            <legend
+              class="PrivateNotchedOutline-legend-2"
+              style="width: 0.01px;"
+            >
+              <span>
+                ​
+              </span>
+            </legend>
+          </fieldset>
+        </div>
       </div>
     </div>
   </body>,
   "container": <div>
     <div
-      aria-valuemax="10"
-      aria-valuemin="0"
-      aria-valuenow="5"
-      style="width: 10px; height: 10px; border-radius: 5px; position: relative; outline: none; box-sizing: border-box; overflow: hidden; cursor: pointer;"
-      tabindex="0"
+      class="MuiFormControl-root MuiTextField-root sc-bdfBwQ dYGElg"
     >
-      <svg
-        style="transform: rotate(164deg);"
-        transform="rotate(164)"
+      <div
+        class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
       >
-        dial.svg
-      </svg>
+        <input
+          aria-invalid="false"
+          class="MuiInputBase-input MuiOutlinedInput-input"
+          type="text"
+          value=""
+        />
+        <fieldset
+          aria-hidden="true"
+          class="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
+          style="padding-left: 8px;"
+        >
+          <legend
+            class="PrivateNotchedOutline-legend-2"
+            style="width: 0.01px;"
+          >
+            <span>
+              ​
+            </span>
+          </legend>
+        </fieldset>
+      </div>
     </div>
   </div>,
   "debug": [Function],
