@@ -6,7 +6,7 @@ import Sound from "./sound";
 const Lanes = (): JSX.Element => {
   return (
     <LanesContainer p="1rem">
-      Title
+      Build your sound
       <Sound />
     </LanesContainer>
   );

@@ -63,6 +63,7 @@ const Sound = (): JSX.Element => {
         <Button onClick={(): void => newWave("sawtooth")}>Sawtooth</Button>
         <Button onClick={(): void => newWave("sine")}>Sine</Button>
         <Button onClick={(): void => newWave("square")}>Square</Button>
+        <Button onClick={(): void => newWave("triangle")}>Triangle</Button>
       </Box>
 
       <Box>
