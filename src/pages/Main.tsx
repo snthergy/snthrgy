@@ -16,6 +16,4 @@ const Main = (props: MainProps): JSX.Element => {
 
 export default Main;
 
-const AppContainer = styled.div`
-  margin-top: 64px;
-`;
+const AppContainer = styled.div``;

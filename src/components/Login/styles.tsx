@@ -7,7 +7,7 @@ export const LoginContainer = styled.div`
   flex-direction: column;
   border: 4px solid ${colors.mainBlue};
   align-items: center;
-  border-radius: 5px;
+  border-radius: 12px;
   width: 450px;
   height: 425px;
 `;

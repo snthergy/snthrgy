@@ -13,5 +13,7 @@ const Dashboard = (): JSX.Element => {
 export default Dashboard;
 
 const DashboardContainer = styled.div`
-  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  padding: 64px 0;
 `;
