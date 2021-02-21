@@ -1,19 +1,10 @@
 import * as React from "react";
-import Dashboard from "./dashboard";
-import styled from "styled-components";
+import Dashboard from "./Dashboard/index";
 
 interface MainProps {}
 
 const Main = (props: MainProps): JSX.Element => {
-  return (
-    <React.Fragment>
-      <AppContainer>
-        <Dashboard {...props} />
-      </AppContainer>
-    </React.Fragment>
-  );
+  return <Dashboard {...props} />;
 };
 
 export default Main;
-
-const AppContainer = styled.div``;
