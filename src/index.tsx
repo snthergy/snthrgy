@@ -1,13 +1,20 @@
 import * as React from "react";
 import ReactDOM from "react-dom";
+import {BrowserRouter as Router} from "react-router-dom";
+import {StylesProvider} from "@material-ui/styles";
+
 import Main from "./pages/Main";
-import {create} from "jss";
-import {jssPreset} from "@material-ui/core/styles";
+import Auth0ProviderWithHistory from "./auth/AuthProviderWithHistory";
+import "./styles.css";
 
-// This allows styled components to take priority over material UI
-create({
-  ...jssPreset(),
-  insertionPoint: document.getElementById("jss-insertion-point"),
-});
+const App = () => (
+  <StylesProvider injectFirst>
+    <Router>
+      <Auth0ProviderWithHistory>
+        <Main />
+      </Auth0ProviderWithHistory>
+    </Router>
+  </StylesProvider>
+);
 
-ReactDOM.render(<Main />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));
