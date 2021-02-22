@@ -1,17 +1,20 @@
 {
   "files": {
-    "main.js": "/snthrgy/static/js/main.3c7303e6.chunk.js",
-    "main.js.map": "/snthrgy/static/js/main.3c7303e6.chunk.js.map",
+    "main.css": "/snthrgy/static/css/main.7c397e29.chunk.css",
+    "main.js": "/snthrgy/static/js/main.bbac8963.chunk.js",
+    "main.js.map": "/snthrgy/static/js/main.bbac8963.chunk.js.map",
     "runtime-main.js": "/snthrgy/static/js/runtime-main.719c1132.js",
     "runtime-main.js.map": "/snthrgy/static/js/runtime-main.719c1132.js.map",
-    "static/js/2.4ae8c784.chunk.js": "/snthrgy/static/js/2.4ae8c784.chunk.js",
-    "static/js/2.4ae8c784.chunk.js.map": "/snthrgy/static/js/2.4ae8c784.chunk.js.map",
+    "static/js/2.62f98c75.chunk.js": "/snthrgy/static/js/2.62f98c75.chunk.js",
+    "static/js/2.62f98c75.chunk.js.map": "/snthrgy/static/js/2.62f98c75.chunk.js.map",
     "index.html": "/snthrgy/index.html",
-    "static/js/2.4ae8c784.chunk.js.LICENSE.txt": "/snthrgy/static/js/2.4ae8c784.chunk.js.LICENSE.txt"
+    "static/css/main.7c397e29.chunk.css.map": "/snthrgy/static/css/main.7c397e29.chunk.css.map",
+    "static/js/2.62f98c75.chunk.js.LICENSE.txt": "/snthrgy/static/js/2.62f98c75.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.719c1132.js",
-    "static/js/2.4ae8c784.chunk.js",
-    "static/js/main.3c7303e6.chunk.js"
+    "static/js/2.62f98c75.chunk.js",
+    "static/css/main.7c397e29.chunk.css",
+    "static/js/main.bbac8963.chunk.js"
   ]
 }
