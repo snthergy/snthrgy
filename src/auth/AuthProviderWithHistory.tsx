@@ -1,11 +1,9 @@
 import React from "react";
 import {useHistory} from "react-router-dom";
 import {Auth0Provider} from "@auth0/auth0-react";
+import {AUTH_CONFIG} from "../client/auth0-variables";
 
 const Auth0ProviderWithHistory = ({children}) => {
-  const domain = process.env.REACT_APP_AUTH0_DOMAIN;
-  const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
-
   const history = useHistory();
 
   const onRedirectCallback = appState => {
@@ -14,8 +12,8 @@ const Auth0ProviderWithHistory = ({children}) => {
 
   return (
     <Auth0Provider
-      domain={domain}
-      clientId={clientId}
+      domain={AUTH_CONFIG.domain}
+      clientId={AUTH_CONFIG.clientId}
       redirectUri={window.location.origin}
       onRedirectCallback={onRedirectCallback}
       useRefreshTokens={true}

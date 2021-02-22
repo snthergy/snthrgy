@@ -15,4 +15,3 @@ export const REALTIME_GRAPHQL_URL = `${scheme(
 
 export const authClientId = process.env.REACT_APP_AUTH_CLIENT_ID;
 export const authDomain = process.env.REACT_APP_AUTH_DOMAIN;
-export const callbackUrl = `http://localhost:3000/callback`; // modify `callbackUrl` to point to your localhost

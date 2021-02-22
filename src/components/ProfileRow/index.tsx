@@ -13,7 +13,7 @@ export default function ProfileRow({}: PropfileRowProps): ReactElement {
   return (
     <ProfileRowStyles>
       {/* TODO: this will become a dropdown menu */}
-      <Button onClick={() => handler()}>{message}</Button>
+      <Button onClick={handler}>{message}</Button>
     </ProfileRowStyles>
   );
 }
