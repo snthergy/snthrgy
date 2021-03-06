@@ -5,7 +5,7 @@ export interface ButtonProps {
   onClick: () => void;
 }
 
-export const Button: React.FC<ButtonProps> = ({onClick, children}) => {
+export const Button: React.FC<ButtonProps> = ({ onClick, children, ...restProps }) => {
   const [isActive, setIsActive] = useState(false);
   const [selected, setSelected] = useState(0);
   const [isMuted, setIsmuted] = useState(false);
