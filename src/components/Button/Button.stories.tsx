@@ -1,6 +1,7 @@
 import React from "react";
-import {Story, Meta} from "@storybook/react/types-6-0";
-import {Button, ButtonProps} from "./index";
+import {Meta} from "@storybook/react/types-6-0";
+import {Button} from "./index";
+import {ReactComponent as Arrow} from "../../assets/arrow.svg";
 
 export default {
   title: "Button",
@@ -10,9 +11,12 @@ export default {
   },
 } as Meta;
 
-const Template: Story<ButtonProps> = args => <Button {...args} />;
-
-export const ButtonBase = Template.bind({});
+export const ButtonBase = args => <Button {...args} />;
 ButtonBase.args = {
   children: "Test",
+};
+
+export const ButtonWithArrow = args => <Button {...args} />;
+ButtonWithArrow.args = {
+  children: <Arrow />,
 };

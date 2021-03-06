@@ -1,6 +1,7 @@
 import * as React from "react";
 import {DashboardContainer, LeftPanel} from "./styles";
 import ProfileRow from "../../components/ProfileRow/index";
+import PlayField from "./Playfield";
 
 const Dashboard = () => {
   return (
@@ -8,7 +9,7 @@ const Dashboard = () => {
       <LeftPanel>
         <ProfileRow />
       </LeftPanel>
-      <div>Right panel</div>
+      <PlayField />
     </DashboardContainer>
   );
 };
