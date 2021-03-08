@@ -7,6 +7,8 @@ export default {
   component: Button,
   argTypes: {
     children: {control: "string"},
+    selected: {control: "boolean"},
+    isActive: {control: "boolean"},
   },
 } as Meta;
 
@@ -14,5 +16,9 @@ const Template: Story<ButtonProps> = args => <Button {...args} />;
 
 export const ButtonBase = Template.bind({});
 ButtonBase.args = {
-  children: "Boh",
+  children: "",
+  selected: "boolean",
+  isActive: "boolean",
+  isMuted: "boolean"
+
 };

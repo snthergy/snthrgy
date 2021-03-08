@@ -1,21 +1,25 @@
-import React, {useState} from "react";
+import React from "react";
 import {StyledButton} from "./styles";
 
 export interface ButtonProps {
   onClick: () => void;
+  isActive: boolean;
+  selected: boolean;
+  isMuted: boolean;
+  handleClick: () => void;
 }
 
-export const Button: React.FC<ButtonProps> = ({ onClick, children, ...restProps }) => {
-  const [isActive, setIsActive] = useState(false);
-  const [selected, setSelected] = useState(0);
-  const [isMuted, setIsmuted] = useState(false);
+export const Button: React.FC<ButtonProps> = ({ 
+  onClick,
+  isActive,
+  selected,
+  isMuted,
+  handleClick,
+  children, 
+}) => {
 
-  const handleClick = (e) => {
-    e.preventDefault;
-    setIsActive(!isActive);
-
-  }
-  
-
-  return <StyledButton onClick={onClick} handleClick={handleClick} isActive={isActive}>{children}</StyledButton>;
+  return 
+  <StyledButton onClick={handleClick} selected={selected} isMuted={isMuted} isActive={isActive}>
+    {children}
+  </StyledButton>;
 };
