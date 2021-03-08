@@ -3,6 +3,7 @@ import MaterialButton from "@material-ui/core/Button";
 import colors from "../../desigin/colors";
 
 export const StyledButton = styled(MaterialButton)`
-  color: white;
-  background-color: ${colors.mainBlue};
+  background-color: white;
+  border: 3px solid ${colors.mainBlue};
+  border-radius: 12px;
 `;
