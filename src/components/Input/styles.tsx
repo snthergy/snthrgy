@@ -1,5 +1,5 @@
 import TextField from "@material-ui/core/TextField";
-import colors from "../../desigin/colors";
+import colors from "../../design/colors";
 import styled from "styled-components";
 
 export const StyledTextField = styled(TextField)`
