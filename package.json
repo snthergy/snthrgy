@@ -64,7 +64,7 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "chromatic": "chromatic --project-token CHROMATIC_PROJECT_TOKEN --exit-zero-on-changes",
+    "chromatic": "chromatic -r dotenv/config --exit-zero-on-changes",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
