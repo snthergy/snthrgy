@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import colors from "../../desigin/colors";
+import colors from "../../design/colors";
 
 export const StyledButton = styled.button`
   color: white;
