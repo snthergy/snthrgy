@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import colors from "../../desigin/colors";
+import colors from "../../design/colors";
 
 export const ProfileRowStyles = styled.div`
   border-bottom: 2px solid ${colors.grey};
