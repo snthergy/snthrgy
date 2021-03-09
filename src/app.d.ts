@@ -18,6 +18,7 @@ export interface Track {
   amp: Amp;
   reverb: Reverb;
   delay: Delay;
+  sequence: Sequence;
 }
 
 export interface Osc {
@@ -65,4 +66,14 @@ export interface Delay {
   mix: number;
   length: number;
   decay: number;
+}
+
+export interface Sequence {
+  id: string;
+  steps: Step[];
+}
+
+export interface Step {
+  id: string;
+  isActive: boolean;
 }
