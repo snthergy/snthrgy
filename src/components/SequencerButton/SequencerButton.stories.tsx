@@ -19,6 +19,5 @@ ButtonBase.args = {
   children: "",
   selected: "boolean",
   isActive: "boolean",
-  isMuted: "boolean"
-
+  isMuted: "boolean",
 };
