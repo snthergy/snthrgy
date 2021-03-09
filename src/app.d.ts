@@ -12,13 +12,13 @@ export interface Project {
 export interface Track {
   id: string;
   name: string;
-  osc1: Osc;
-  osc2: Osc;
-  filter: Filter;
-  amp: Amp;
-  reverb: Reverb;
-  delay: Delay;
-  sequence: Sequence;
+  osc1?: Osc;
+  osc2?: Osc;
+  filter?: Filter;
+  amp?: Amp;
+  reverb?: Reverb;
+  delay?: Delay;
+  sequence?: Sequence;
 }
 
 export interface Osc {
