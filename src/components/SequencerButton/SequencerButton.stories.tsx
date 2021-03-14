@@ -16,7 +16,7 @@ const Template: Story<ButtonProps> = args => <Button {...args} />;
 
 export const ButtonBase = Template.bind({});
 ButtonBase.args = {
-  children: "",
+  children: "image",
   selected: "boolean",
   isActive: "boolean",
   isMuted: "boolean",

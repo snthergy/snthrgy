@@ -8,7 +8,7 @@ export interface ButtonProps {
   handleClick: () => void;
 }
 
-export const Button: React.FC<ButtonProps> = ({
+export const SequencerButton: React.FC<ButtonProps> = ({
   isActive,
   selected,
   isMuted,
