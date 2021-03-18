@@ -1,10 +1,10 @@
 import React from "react";
 import {Story, Meta} from "@storybook/react/types-6-0";
-import {SequencerButton, ButtonProps} from "./index";
+import {PlayButton, ButtonProps} from "./index";
 
 export default {
-  title: "SequencerButton",
-  component: SequencerButton,
+  title: "PlayButton",
+  component: PlayButton,
   argTypes: {
     children: {control: "string"},
     selected: {control: "boolean"},

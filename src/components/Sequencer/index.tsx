@@ -1,13 +1,14 @@
 import * as React from "react";
 import {SectionContainer} from "../sharedStyles";
 import { SequencerButton } from "../SequencerButton";
-import { SequencerStyles } from "./styles";
+import { PlayButton }  from "../Play Button";
+import { StyledSequencerComponent } from "./styles";
 
 export interface ISequencerProps {}
 
 export default function Sequencer(props: ISequencerProps) {
   return (
-    <SequencerStyles>
+    <StyledSequencerComponent>
       <SectionContainer>
         Sequencer
         <SequencerButton></SequencerButton>
@@ -18,9 +19,11 @@ export default function Sequencer(props: ISequencerProps) {
         <SequencerButton></SequencerButton>
         <SequencerButton></SequencerButton>
         <SequencerButton></SequencerButton>
-        <SequencerButton><img src="/images/play.jpg" alt="play button"></img></SequencerButton>
+        <SequencerButton>
+          <PlayButton></PlayButton>
+        </SequencerButton>
       </SectionContainer>
-    </SequencerStyles>
+    </StyledSequencerComponent>
    
   )
  
