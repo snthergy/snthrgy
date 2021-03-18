@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import {SectionContainer} from "../sharedStyles";
 import Osc1 from "./Osc1";
+import Osc2 from "./Osc2";
 
 export interface IOscilatorsProps {}
 
@@ -10,7 +11,7 @@ export default function Oscilators(props: IOscilatorsProps) {
   return (
     <SectionContainer>
       <Osc1 />
-      <div>Osc 2</div>
+      <Osc2 />
     </SectionContainer>
   );
 }

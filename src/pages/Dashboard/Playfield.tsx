@@ -6,9 +6,7 @@ import Effects from "../../components/Effects/index";
 import {PlayfieldContainer} from "./styles";
 import Sequencer from "../../components/Sequencer/index";
 
-export interface IPlayFieldProps {}
-
-export default function PlayField(props: IPlayFieldProps) {
+export default function PlayField() {
   return (
     <PlayfieldContainer>
       <Oscilators />
