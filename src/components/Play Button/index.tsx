@@ -1,6 +1,6 @@
 import React from "react";
-import { StyledButton } from "./styles";
-import { SequencerButton } from "../SequencerButton";
+import {PlayStopIcon} from "./styles";
+import {SequencerButton} from "../SequencerButton";
 
 export interface ButtonProps {
   isActive?: boolean;
@@ -9,10 +9,11 @@ export interface ButtonProps {
   handleClick?: () => void;
 }
 
-export const PlayButton: React.FC<ButtonProps> = (props) => {
+export const PlayButton: React.FC<ButtonProps> = props => {
+  const {handleClick, ...rest} = props;
   return (
-    <SequencerButton>
-      <StyledButton {...props} />
+    <SequencerButton handleClick={handleClick}>
+      <PlayStopIcon {...rest} />
     </SequencerButton>
   );
 };
