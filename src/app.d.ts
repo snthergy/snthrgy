@@ -1,7 +1,6 @@
 export interface User {
-  id: string;
-  full_name: string;
-  project?: Project;
+  id: number | string;
+  fullName: string;
 }
 
 export interface Project {

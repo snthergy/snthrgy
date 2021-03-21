@@ -9,14 +9,13 @@ interface PropfileRowProps {}
 
 export default function ProfileRow({}: PropfileRowProps): ReactElement {
   const {loginWithPopup, logout, isAuthenticated, user} = useAuth0();
-  const [userName, setUserName] = useAtom(userAtom);
+  const [userName, setUser] = useAtom(userAtom);
   const message = isAuthenticated ? "Log out" : "Log in";
   const handler = isAuthenticated ? logout : loginWithPopup;
 
-  console.log("USER: ", user);
   useEffect(() => {
     if (user) {
-      setUserName({...userName, full_name: user.given_name});
+      setUser({...userName, fullName: user.given_name});
     }
   }, [user]);
 
@@ -24,7 +23,7 @@ export default function ProfileRow({}: PropfileRowProps): ReactElement {
     <ProfileRowStyles>
       {/* TODO: this will become a dropdown menu */}
       <Button onClick={handler}>{message}</Button>
-      {Boolean(userName.full_name) && userName.full_name}
+      {Boolean(userName.fullName) && userName.fullName}
     </ProfileRowStyles>
   );
 }

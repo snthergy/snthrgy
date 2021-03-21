@@ -1,9 +1,12 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const {override, addBabelPlugins} = require("customize-cra");
+const {
+  override,
+  addExternalBabelPlugin,
+  addBabelPreset,
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+} = require("customize-cra");
 
 module.exports = override(
-  addBabelPlugins(
-    "@babel/plugin-proposal-nullish-coalescing-operator",
-    "@babel/plugin-syntax-optional-chaining"
-  )
+  addBabelPreset("@babel/preset-react"),
+  addExternalBabelPlugin("@babel/plugin-proposal-class-properties")
 );
