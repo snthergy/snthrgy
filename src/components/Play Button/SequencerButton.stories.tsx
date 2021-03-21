@@ -12,11 +12,10 @@ export default {
   },
 } as Meta;
 
-const Template: Story<ButtonProps> = args => <Button {...args} />;
+const Template: Story<ButtonProps> = args => <PlayButton {...args} />;
 
 export const ButtonBase = Template.bind({});
 ButtonBase.args = {
-  children: "image",
   selected: "boolean",
   isActive: "boolean",
   isMuted: "boolean",

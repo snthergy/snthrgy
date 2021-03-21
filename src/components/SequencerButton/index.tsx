@@ -2,10 +2,10 @@ import React from "react";
 import {StyledButton} from "./styles";
 
 export interface ButtonProps {
-  isActive: boolean;
-  selected: boolean;
-  isMuted: boolean;
-  handleClick: () => void;
+  isActive?: boolean;
+  selected?: boolean;
+  isMuted?: boolean;
+  handleClick?: () => void;
 }
 
 export const SequencerButton: React.FC<ButtonProps> = ({

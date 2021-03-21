@@ -1,32 +1,18 @@
 import React from "react";
-import {StyledButton} from "./styles";
+import { StyledButton } from "./styles";
+import { SequencerButton } from "../SequencerButton";
 
 export interface ButtonProps {
-  isActive: boolean;
-  selected: boolean;
-  isMuted: boolean;
-  handleClick: () => void;
+  isActive?: boolean;
+  selected?: boolean;
+  isMuted?: boolean;
+  handleClick?: () => void;
 }
 
-export const PlayButton: React.FC<ButtonProps> = ({
-  isActive,
-  selected,
-  isMuted,
-  handleClick,
-  children,
-}) => {
-  if(children) {
-    return (
-      <StyledButton
-        onClick={handleClick}
-        selected={selected}
-        isMuted={isMuted}
-        isActive={isActive}
-      >
-        {children}
-      </StyledButton>
-    
-    );
-  }
-  return <StyledButton />
+export const PlayButton: React.FC<ButtonProps> = (props) => {
+  return (
+    <SequencerButton>
+      <StyledButton {...props} />
+    </SequencerButton>
+  );
 };

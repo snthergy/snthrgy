@@ -12,11 +12,11 @@ export default {
   },
 } as Meta;
 
-const Template: Story<ButtonProps> = args => <Button {...args} />;
+const Template: Story<ButtonProps> = args => <SequencerButton {...args} />;
 
 export const ButtonBase = Template.bind({});
 ButtonBase.args = {
-  children: "image",
+  children: <div>"string"</div>,
   selected: "boolean",
   isActive: "boolean",
   isMuted: "boolean",
