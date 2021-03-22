@@ -8,7 +8,7 @@ export const PlayStopIcon = styled.div`
   background-color: ${({isActive}) =>
     isActive ? colors.mainBlue : colors.white};
   border: solid 3.5px ${colors.mainBlue};
-  margin: ${({isActive}) => (isActive ? "0" : "5px")};
+  margin: 0 auto;
   box-sizing: border-box;
   border-color: transparent transparent transparent ${colors.mainBlue};
   cursor: pointer;
