@@ -2,14 +2,14 @@ import React, {useState} from "react";
 import {Dial} from "../Dial/Dial";
 import {DialContainer, OscContainer, OscTitle} from "./styles";
 
-export default function Osc1() {
+export default function Osc2() {
   const [osc1Value, setOsc1Value] = useState(0);
   const [osc2Value, setOsc2Value] = useState(0);
   const [osc3Value, setOsc3Value] = useState(0);
 
   return (
     <OscContainer>
-      <OscTitle>Osc 1</OscTitle>
+      <OscTitle>Osc 2</OscTitle>
       <DialContainer>
         <Dial
           value={osc1Value}

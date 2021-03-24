@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import colors from "../../design/colors";
 
-export const StyledButton = styled.button`
+export const PlayStopIcon = styled.div`
   color: white;
   width: 20px;
   height: 20px;
-  background-color: ${({ isActive }) =>
+  background-color: ${({isActive}) =>
     isActive ? colors.mainBlue : colors.white};
   border: solid 3.5px ${colors.mainBlue};
-  margin: ${({ isActive }) => (isActive ? "0" : "5px")};
+  margin: 0 auto;
   box-sizing: border-box;
   border-color: transparent transparent transparent ${colors.mainBlue};
   cursor: pointer;

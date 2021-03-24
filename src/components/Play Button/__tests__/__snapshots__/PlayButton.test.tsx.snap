@@ -4,9 +4,10 @@ exports[`play button renders correctly 1`] = `
 <DocumentFragment>
   <button
     class="sc-gsTCUz eLfczQ"
-  />
-  <button
-    class="sc-bdfBwQ hyqfeI"
-  />
+  >
+    <div
+      class="sc-bdfBwQ hyqfeI"
+    />
+  </button>
 </DocumentFragment>
 `;

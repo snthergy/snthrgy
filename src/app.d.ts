@@ -1,13 +1,12 @@
 export interface User {
-  id: string;
-  full_name: string;
-  project: Project;
+  id: number | string;
+  fullName: string;
 }
 
 export interface Project {
   id: string;
   name: string;
-  tracks: Track[];
+  tracks?: Track[];
 }
 export interface Track {
   id: string;

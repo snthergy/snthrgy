@@ -1,6 +1,7 @@
 import React from "react";
 import Knob, {KnobProps, composeTwo, useAngleUpdater} from "react-dial-knob";
 import {ReactComponent as DialSvg} from "../../assets/dial.svg";
+import {Container} from "./styles";
 
 export interface DialProps extends KnobProps {
   style?: React.CSSProperties;
@@ -11,7 +12,7 @@ export const Dial = (props: DialProps): JSX.Element => {
   const angleChangeHandler = composeTwo<number>(setAngle, props.onAngleChange);
 
   return (
-    <>
+    <Container>
       <Knob
         diameter={props.diameter}
         value={props.value}
@@ -32,6 +33,6 @@ export const Dial = (props: DialProps): JSX.Element => {
         />
       </Knob>
       {props.children}
-    </>
+    </Container>
   );
 };
