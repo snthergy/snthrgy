@@ -16,10 +16,10 @@ export const userAtom = atom(
   }
 );
 
+// TODO: This doesn't do anything yet
 export const userDBAtom = atomWithQuery(get => ({
   queryKey: ["user", get(idAtom)],
   queryFn: async ({queryKey: [, id]}) => {
-    // const res = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
     return fetchUsers(id);
   },
 }));

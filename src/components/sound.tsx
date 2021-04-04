@@ -1,53 +1,20 @@
 import * as React from "react";
-import {FatOscillator} from "tone";
 import {Box, CardHeader, Button, CardContent} from "@material-ui/core";
 import Slider from "@material-ui/core/Slider";
 import styled from "styled-components";
+import {useSynth} from "../hooks/useSynth";
 
+// This whole file isn't used. Just keeping it around as notes from my first experiment
 const Sound = (): JSX.Element => {
-  const [started, setStarted] = React.useState(false);
-  const [freq, setFreq] = React.useState(400);
-
-  const synth: any = React.useRef(
-    new FatOscillator(freq, "sawtooth", 20).toMaster()
-  );
-
-  React.useEffect((): void => {
-    console.log("Synth effect: ", synth.current.state);
-  }, [synth.current.state]);
-
-  console.log("Synth started state: ", synth.current.state);
-  const newFreq = (
-    _: React.ChangeEvent<unknown>,
-    value: number | number[]
-  ): void => {
-    synth.current.frequency.value = value;
-    if (Array.isArray(value)) {
-      value.map((v: number): void => setFreq(v));
-    } else {
-      setFreq(value);
-    }
-  };
-
-  const newWave = (newType: string): void => {
-    synth.current.type = newType;
-  };
-
-  const newPhase = (
-    _: React.ChangeEvent<unknown>,
-    newSpread: number | number[]
-  ): void => {
-    synth.current.spread = newSpread;
-  };
-
-  const startSynth = (): void => {
-    setStarted(true);
-    synth.current.start();
-  };
-  const stopSynth = (): void => {
-    setStarted(false);
-    synth.current.stop();
-  };
+  const {
+    started,
+    stopSynth,
+    startSynth,
+    newWave,
+    newFreq,
+    newPhase,
+    freq,
+  } = useSynth();
 
   return (
     <Container className="App">
