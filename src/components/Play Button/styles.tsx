@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import colors from "../../design/colors";
 
-export const PlayStopIcon = styled.div`
+export const PlayStopIcon = styled.div<{isActive: boolean}>`
   color: white;
   width: 20px;
   height: 20px;

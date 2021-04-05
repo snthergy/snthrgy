@@ -3,7 +3,7 @@ import {useAuth0} from "@auth0/auth0-react";
 import {useAtom} from "jotai";
 import {ProfileRowStyles} from "./styles";
 import {Button} from "../../components/Button";
-import {userAtom} from "../../store/index";
+import {userAtom} from "../../store/users";
 
 interface PropfileRowProps {}
 

@@ -1,3 +1,5 @@
+import {FatOscillator, Sequence} from "tone";
+
 export interface User {
   id: number | string;
   fullName: string;
@@ -9,15 +11,11 @@ export interface Project {
   tracks?: Track[];
 }
 export interface Track {
-  id: string;
+  id: number;
   name: string;
-  osc1?: Osc;
-  osc2?: Osc;
-  filter?: Filter;
-  amp?: Amp;
-  reverb?: Reverb;
-  delay?: Delay;
-  sequence?: Sequence;
+  synth: FatOscillator;
+  isSelected: boolean;
+  sequence: Sequence<any>;
 }
 
 export interface Osc {

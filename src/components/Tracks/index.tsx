@@ -1,5 +1,4 @@
 import * as React from "react";
-import {tracks_fixtures} from "./__fixtures__/constants";
 import {
   AddTrackButton,
   AddTrackStyles,
@@ -8,10 +7,26 @@ import {
   TrackWrapper,
 } from "./styles";
 import {Dial} from "../Dial/Dial";
+import {tracksAtom, selectedTrackAtom} from "../../store/tracks";
+import {useAtom} from "jotai";
 
-// export interface ITracksProps {}
+const Track = ({track}) => {
+  const [, setSelectedTrack] = useAtom(selectedTrackAtom);
+
+  return (
+    <TrackWrapper
+      onClick={() => setSelectedTrack(track.id)}
+      isSelected={track.isSelected}
+      key={track.id}
+    >
+      {track.name}
+      <Dial diameter={40} value={1} min={1} max={2} step={1} />
+    </TrackWrapper>
+  );
+};
 
 export default function Tracks() {
+  const [tracks] = useAtom(tracksAtom);
   return (
     <TracksWrapper>
       <AddTrackStyles>
@@ -19,11 +34,8 @@ export default function Tracks() {
         <AddTrackButton>+</AddTrackButton>
       </AddTrackStyles>
       <ThickDivider />
-      {tracks_fixtures.map(track => (
-        <TrackWrapper key={track.id}>
-          {track.name}
-          <Dial diameter={40} value={1} min={1} max={2} step={1} />
-        </TrackWrapper>
+      {tracks.map(track => (
+        <Track key={track.id} track={track} />
       ))}
       <ThickDivider />
     </TracksWrapper>
