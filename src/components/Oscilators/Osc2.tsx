@@ -1,6 +1,6 @@
-import React, {useState} from "react";
-import {Dial} from "../Dial/Dial";
-import {DialContainer, OscContainer, OscTitle} from "./styles";
+import React, { useState } from "react";
+import { Dial } from "../Dial/Dial";
+import { DialContainer, SectionTitle, SubsectionContainer } from '../sharedStyles';
 
 export default function Osc2() {
   const [osc1Value, setOsc1Value] = useState(0);
@@ -8,8 +8,8 @@ export default function Osc2() {
   const [osc3Value, setOsc3Value] = useState(0);
 
   return (
-    <OscContainer>
-      <OscTitle>Osc 2</OscTitle>
+    <SubsectionContainer>
+      <SectionTitle>Osc 2</SectionTitle>
       <DialContainer>
         <Dial
           value={osc1Value}
@@ -42,6 +42,6 @@ export default function Osc2() {
           Pan
         </Dial>
       </DialContainer>
-    </OscContainer>
+    </SubsectionContainer>
   );
 }

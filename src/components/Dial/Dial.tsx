@@ -1,7 +1,7 @@
 import React from "react";
-import Knob, {KnobProps, composeTwo, useAngleUpdater} from "react-dial-knob";
-import {ReactComponent as DialSvg} from "../../assets/dial.svg";
-import {Container} from "./styles";
+import Knob, { KnobProps, composeTwo, useAngleUpdater } from "react-dial-knob";
+import { ReactComponent as DialSvg } from "../../assets/dial.svg";
+import { Container } from "./styles";
 
 export interface DialProps extends KnobProps {
   style?: React.CSSProperties;
@@ -22,14 +22,14 @@ export const Dial = (props: DialProps): JSX.Element => {
         spaceMaxFromZero={props.spaceMaxFromZero}
         ariaLabelledBy={props.ariaLabelledBy}
         ariaValueText={props.ariaValueText}
-        knobStyle={{cursor: "pointer", ...props.knobStyle}}
+        knobStyle={{ cursor: "pointer", margin: "8px", ...props.knobStyle }}
         onAngleChange={angleChangeHandler}
         onInteractionChange={props.onInteractionChange}
         onValueChange={props.onValueChange}
       >
         <DialSvg
           transform={`rotate(${angle})`}
-          style={{transform: `rotate(${angle}deg)`}}
+          style={{ transform: `rotate(${angle}deg)` }}
         />
       </Knob>
       {props.children}

@@ -1,8 +1,14 @@
 import * as React from "react";
-import {SectionContainer} from "../sharedStyles";
+import { SectionContainer } from "../sharedStyles";
+import { Delay } from "./Delay";
+import { Reverb } from "./Reverb";
 
-export interface IEffectsProps {}
 
-export default function Effects(props: IEffectsProps) {
-  return <SectionContainer>Effects</SectionContainer>;
+export default function Effects() {
+  return (
+    <SectionContainer>
+      <Reverb />
+      <Delay />
+    </SectionContainer>
+  )
 }
