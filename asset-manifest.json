@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/snthrgy/static/css/main.7c397e29.chunk.css",
-    "main.js": "/snthrgy/static/js/main.efd5f43d.chunk.js",
-    "main.js.map": "/snthrgy/static/js/main.efd5f43d.chunk.js.map",
+    "main.js": "/snthrgy/static/js/main.f030b4b4.chunk.js",
+    "main.js.map": "/snthrgy/static/js/main.f030b4b4.chunk.js.map",
     "runtime-main.js": "/snthrgy/static/js/runtime-main.719c1132.js",
     "runtime-main.js.map": "/snthrgy/static/js/runtime-main.719c1132.js.map",
-    "static/js/2.65c020dc.chunk.js": "/snthrgy/static/js/2.65c020dc.chunk.js",
-    "static/js/2.65c020dc.chunk.js.map": "/snthrgy/static/js/2.65c020dc.chunk.js.map",
+    "static/js/2.1bf5a642.chunk.js": "/snthrgy/static/js/2.1bf5a642.chunk.js",
+    "static/js/2.1bf5a642.chunk.js.map": "/snthrgy/static/js/2.1bf5a642.chunk.js.map",
     "index.html": "/snthrgy/index.html",
     "static/css/main.7c397e29.chunk.css.map": "/snthrgy/static/css/main.7c397e29.chunk.css.map",
-    "static/js/2.65c020dc.chunk.js.LICENSE.txt": "/snthrgy/static/js/2.65c020dc.chunk.js.LICENSE.txt",
-    "static/media/dial.b4037064.svg": "/snthrgy/static/media/dial.b4037064.svg"
+    "static/js/2.1bf5a642.chunk.js.LICENSE.txt": "/snthrgy/static/js/2.1bf5a642.chunk.js.LICENSE.txt",
+    "static/media/dial.39cea576.svg": "/snthrgy/static/media/dial.39cea576.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.719c1132.js",
-    "static/js/2.65c020dc.chunk.js",
+    "static/js/2.1bf5a642.chunk.js",
     "static/css/main.7c397e29.chunk.css",
-    "static/js/main.efd5f43d.chunk.js"
+    "static/js/main.f030b4b4.chunk.js"
   ]
 }
