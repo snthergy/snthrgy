@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { Dial } from "../Dial/Dial";
-import { SectionContainer, SectionTitle } from "../sharedStyles";
+import React, {useState} from "react";
+import {Dial} from "../Dial/Dial";
+import {SectionContainer, SectionTitle} from "../sharedStyles";
 
 export default function Amp() {
   const [env, setEnvValue] = useState(0);
@@ -20,7 +20,9 @@ export default function Amp() {
           max={120}
           step={1}
           onValueChange={setEnvValue}
-        >Env</Dial>
+        >
+          Env
+        </Dial>
         <Dial
           value={attack}
           diameter={50}
@@ -28,15 +30,9 @@ export default function Amp() {
           max={120}
           step={1}
           onValueChange={setAttackValue}
-        >A</Dial>
-        <Dial
-          value={sustain}
-          diameter={50}
-          min={0}
-          max={120}
-          step={1}
-          onValueChange={setSustainValue}
-        >S</Dial>
+        >
+          A
+        </Dial>
         <Dial
           value={decay}
           diameter={50}
@@ -44,7 +40,19 @@ export default function Amp() {
           max={120}
           step={1}
           onValueChange={setDecayValue}
-        >D</Dial>
+        >
+          D
+        </Dial>
+        <Dial
+          value={sustain}
+          diameter={50}
+          min={0}
+          max={120}
+          step={1}
+          onValueChange={setSustainValue}
+        >
+          S
+        </Dial>
         <Dial
           value={release}
           diameter={50}
@@ -52,7 +60,9 @@ export default function Amp() {
           max={120}
           step={1}
           onValueChange={setReleaseValue}
-        >R</Dial>
+        >
+          R
+        </Dial>
       </SectionContainer>
     </>
   );

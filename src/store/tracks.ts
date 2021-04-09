@@ -1,5 +1,5 @@
 import {atom} from "jotai";
-import {FatOscillator, Sequence} from "tone";
+import {Oscillator, Sequence} from "tone";
 import {Track} from "../app";
 
 export const trackIdsAtom = atom([1, 2]);
@@ -10,7 +10,11 @@ export const tracksAtom = atom(get =>
     (trackId): Track => ({
       name: `Track ${trackId}`,
       id: trackId,
-      synth: new FatOscillator(440, "sawtooth", 20).toDestination(),
+      synth: new Oscillator({
+        frequency: 440,
+        type: "sawtooth",
+        volume: -20,
+      }).toDestination(),
       isSelected: trackId === get(selectedTrackIdAtom),
       sequence: new Sequence(),
     })

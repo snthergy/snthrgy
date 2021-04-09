@@ -3,9 +3,17 @@ import {useAtom} from "jotai";
 import {synthStartedAtom, frequencyAtom} from "../store/synth";
 import {selectedTrackAtom} from "../store/tracks";
 import {ToneOscillatorType} from "tone";
+import {osc1Range} from "../store/oscillators";
+
+const useControlSynth = synth => {
+  const [freq] = useAtom(osc1Range);
+
+  synth.set({frequency: freq});
+};
 
 export const useSynth = () => {
-  const [selectedTrack, setSelectedTrack] = useAtom(selectedTrackAtom);
+  const [selectedTrack] = useAtom(selectedTrackAtom);
+  useControlSynth(selectedTrack.synth);
 
   const [started, setStarted] = useAtom(synthStartedAtom);
   const [freq, setFreq] = useAtom(frequencyAtom);
@@ -17,10 +25,6 @@ export const useSynth = () => {
 
   const newWave = (newType: ToneOscillatorType): void => {
     selectedTrack.synth.type = newType;
-  };
-
-  const newPhase = (_: React.ChangeEvent<unknown>, newSpread: number): void => {
-    selectedTrack.synth.spread = newSpread;
   };
 
   const startSynth = (): void => {
@@ -35,7 +39,6 @@ export const useSynth = () => {
   return {
     startSynth,
     stopSynth,
-    newPhase,
     newWave,
     newFreq,
     started,

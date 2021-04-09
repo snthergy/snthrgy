@@ -1,4 +1,4 @@
-import {FatOscillator, Sequence} from "tone";
+import {Oscillator, Sequence} from "tone";
 
 export interface User {
   id: number | string;
@@ -13,7 +13,7 @@ export interface Project {
 export interface Track {
   id: number;
   name: string;
-  synth: FatOscillator;
+  synth: Oscillator;
   isSelected: boolean;
   sequence: Sequence<any>;
 }
