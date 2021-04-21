@@ -6,8 +6,8 @@ export const StyledButton = styled.button`
   background-color: ${({ isActive }) =>
     isActive ? colors.mainBlue : colors.white};
   border: solid 3.5px ${colors.mainBlue};
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   border-radius: 10px;
   margin: 5px;
 `;
