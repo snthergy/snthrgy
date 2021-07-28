@@ -29,7 +29,7 @@ export const useSynth = () => {
 
   const startSynth = (): void => {
     setStarted(true);
-    const osc = new Tone.Oscillator().toDestination();
+    const osc = selectedTrack.synth;
     // repeated event every 8th note
     Tone.Transport.scheduleRepeat((time) => {
       // use the callback time to schedule events
