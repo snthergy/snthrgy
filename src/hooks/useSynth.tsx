@@ -37,7 +37,7 @@ export const useSynth = () => {
     }, "8n");
     // transport must be started before it starts invoking events
     Tone.Transport.start();
-    // selectedTrack.synth.start();
+    // selectedTrack.synth.start(); commented out just for now, to test out sequencer functionality
   };
   const stopSynth = (): void => {
     setStarted(false);
