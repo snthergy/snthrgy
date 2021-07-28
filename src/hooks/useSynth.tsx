@@ -27,9 +27,9 @@ export const useSynth = () => {
     selectedTrack.synth.type = newType;
   };
 
-  const osc = selectedTrack.synth;
   const rhythm = 8;
   const startSynth = (): void => {
+    const osc = selectedTrack.synth;
     setStarted(true);
     Tone.Transport.start();
     // repeated event every 8th note
@@ -37,7 +37,6 @@ export const useSynth = () => {
       // use the callback time to schedule events
       osc.start(time).stop(time + 0.1);
     }, `${rhythm}n`);
-    // transport must be started before it starts invoking events
     // selectedTrack.synth.start(); commented out just for now, to test out sequencer functionality
   };
   const stopSynth = (): void => {
