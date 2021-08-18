@@ -8,6 +8,13 @@
 
 Web synth
 
+---
+
+Dreams for this project: 
+- [ ] Export as NFT
+- [ ] Data persistance and user session on a blockchain (Aleph? Filecoin?)
+- [ ] Import settings as JSON
+
 Design iteration 1:
 https://www.figma.com/file/HZUySSPr7Si5KmkHNsKlmb/snthrgy?node-id=17%3A2
 
