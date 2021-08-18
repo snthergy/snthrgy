@@ -1,14 +1,14 @@
 import React from "react";
-import {useAtom} from "jotai";
-import {synthStartedAtom, frequencyAtom} from "../store/synth";
-import {selectedTrackAtom} from "../store/tracks";
-import {ToneOscillatorType} from "tone";
-import {osc1Range} from "../store/oscillators";
+import { useAtom } from "jotai";
+import { synthStartedAtom, frequencyAtom } from "../store/synth";
+import { selectedTrackAtom } from "../store/tracks";
+import * as Tone from "tone";
+import { osc1Range } from "../store/oscillators";
 
-const useControlSynth = synth => {
+const useControlSynth = (synth) => {
   const [freq] = useAtom(osc1Range);
 
-  synth.set({frequency: freq});
+  synth.set({ frequency: freq });
 };
 
 export const useSynth = () => {
@@ -23,17 +23,26 @@ export const useSynth = () => {
     setFreq(value);
   };
 
-  const newWave = (newType: ToneOscillatorType): void => {
+  const newWave = (newType: Tone.ToneOscillatorType): void => {
     selectedTrack.synth.type = newType;
   };
 
+  const rhythm = 8;
   const startSynth = (): void => {
+    const osc = selectedTrack.synth;
     setStarted(true);
-    selectedTrack.synth.start();
+    Tone.Transport.start();
+    // repeated event every 8th note
+    Tone.Transport.scheduleRepeat((time) => {
+      // use the callback time to schedule events
+      osc.start(time).stop(time + 0.1);
+    }, `${rhythm}n`);
+    // selectedTrack.synth.start(); commented out just for now, to test out sequencer functionality
   };
   const stopSynth = (): void => {
     setStarted(false);
-    selectedTrack.synth.stop();
+    Tone.Transport.stop();
+    // selectedTrack.synth.stop(); todo: trying to figure out how to connect these events
   };
 
   return {
