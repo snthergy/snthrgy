@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import colors from "../../design/colors";
 
-export const PlayStopIcon = styled.div<{isActive: boolean}>`
+export const PlayStopIcon = styled.div<{ isActive: boolean }>`
   color: white;
   width: 20px;
   height: 20px;
-  background-color: ${({isActive}) =>
+  background-color: ${({ isActive }) =>
     isActive ? colors.mainBlue : colors.white};
   border: solid 3.5px ${colors.mainBlue};
   margin: 0 auto;
